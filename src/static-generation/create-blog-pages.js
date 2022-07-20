@@ -5,6 +5,7 @@ exports.createBlogPages = (graphql, createPage, blogPage) => {
         allMdx {
           edges {
             node {
+              id
               fields {
                 slug
               }
@@ -44,7 +45,7 @@ exports.createBlogPages = (graphql, createPage, blogPage) => {
         // All we need is the ID and the slug to generate the page
         const slug = node.fields.slug;
 
-        // console.log(`creating blog post: `, slug)
+        console.log(`creating blog post: `, slug);
 
         return createPage({
           path: slug,
